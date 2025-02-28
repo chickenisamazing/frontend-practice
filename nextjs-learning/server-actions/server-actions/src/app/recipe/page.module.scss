@@ -1,0 +1,76 @@
+.text {
+  text-align: center;
+  color: #7da3fc;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+
+.container {
+  justify-content: center;
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.recipes {
+  height: 200px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  border: 3px solid rgb(185, 185, 185);
+  justify-content: center;
+}
+
+.recipe-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.recipe-comment {
+  padding: 20px;
+}
+
+.recipe-submit {
+  height: 200px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  border: 3px solid rgb(185, 185, 185);
+  justify-content: center;
+  //   align-items: center;
+  //   justify-items: center;
+  margin-bottom: 100px;
+}
+
+.submit-button {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  border: 3px solid rgb(185, 185, 185);
+  width: 70px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.input {
+  width: 200px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  border: 3px solid rgb(185, 185, 185);
+  border-radius: 5px;
+  padding-left: 5px;
+}
