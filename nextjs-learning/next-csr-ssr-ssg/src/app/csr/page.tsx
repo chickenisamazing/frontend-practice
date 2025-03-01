@@ -42,7 +42,7 @@ export default function Page() {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://kea-pantry.vercel.app";
+      : "https://frontend-practice-ebon.vercel.app";
 
   useEffect(() => {
     async function fetchData() {
