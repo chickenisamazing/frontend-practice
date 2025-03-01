@@ -28,7 +28,7 @@ export async function generateStaticParams() {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://frontend-practice-ebon.vercel.app";
+      : `${process.env.VERCEL_URL}`;
 
   try {
     // const res = await fetch(`${API_URL}/api/recipes`, { cache: "no-store" });
@@ -48,7 +48,7 @@ export default async function Page() {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://frontend-practice-ebon.vercel.app";
+      : `${process.env.VERCEL_URL}`;
 
   const res = await fetch(`${API_URL}/api/recipes/`, {
     next: { revalidate: 60 },
