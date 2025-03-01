@@ -28,7 +28,7 @@ export async function generateStaticParams() {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://kea-pantry.vercel.app";
+      : "https://frontend-practice-ebon.vercel.app";
 
   try {
     // const res = await fetch(`${API_URL}/api/recipes`, { cache: "no-store" });
