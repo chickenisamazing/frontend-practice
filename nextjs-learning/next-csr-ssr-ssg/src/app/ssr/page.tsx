@@ -1,13 +1,14 @@
 import Image from "next/image";
-import { css } from "@emotion/css";
+// import { css } from "@emotion/css";
 
 import styles from "./page.module.scss";
-import { GetRecipes } from "./GetRecipes.jsx";
+import { GetRecipes } from "./GetRecipes";
+// import Link from "next/link";
 
-const titleStyle = css`
-  font-size: 32px;
-  color: #0070f3;
-`;
+// const titleStyle = css`
+//   font-size: 32px;
+//   color: #0070f3;
+// `;
 
 interface Ingredient {
   id: number;
@@ -75,6 +76,7 @@ export default async function Page() {
                   height={256}
                 />
               </div>
+
               <div className={styles.btn}>{recipe.name}</div>
               <div className={styles.description}>{recipe.description}</div>
             </div>

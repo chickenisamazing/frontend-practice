@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { css } from "@emotion/css";
+// import { css } from "@emotion/css";
 
 import styles from "./page.module.scss";
 import Loader from "@/component/Loader";
 
-const titleStyle = css`
-  font-size: 32px;
-  color: #0070f3;
-`;
+// const titleStyle = css`
+//   font-size: 32px;
+//   color: #0070f3;
+// `;
 
 interface Ingredient {
   id: number;
@@ -35,7 +35,7 @@ interface Recipe {
 }
 
 export default function Page() {
-  const router = useRouter();
+  // const router = useRouter();
   const [datas, setDatas] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -62,9 +62,9 @@ export default function Page() {
     fetchData();
   }, [API_URL]);
 
-  const buttonOnClick = (num: number, type: string) => {
-    router.push(`/${type}/${num}`);
-  };
+  // const buttonOnClick = (num: number, type: string) => {
+  //   router.push(`/${type}/${num}`);
+  // };
 
   if (loading)
     return (
