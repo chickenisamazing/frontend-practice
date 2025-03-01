@@ -2,7 +2,7 @@ export async function GetRecipes() {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : `${process.env.VERCEL_URL}`;
+      : "https://frontend-practice-ebon.vercel.app";
 
   try {
     const res = await fetch(`${API_URL}/api/recipes`);

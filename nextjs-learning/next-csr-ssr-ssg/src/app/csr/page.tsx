@@ -42,7 +42,7 @@ export default function Page() {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : `${process.env.VERCEL_URL}`;
+      : "https://frontend-practice-ebon.vercel.app";
 
   useEffect(() => {
     async function fetchData() {
