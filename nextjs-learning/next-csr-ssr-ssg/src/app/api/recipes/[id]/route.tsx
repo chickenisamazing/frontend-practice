@@ -10,7 +10,7 @@ export async function GET(
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://kea-pantry.vercel.app";
+      : "https://frontend-practice-ebon.vercel.app";
 
   const res = await fetch(`${API_URL}/data/dummyRecipeData.json`);
 
