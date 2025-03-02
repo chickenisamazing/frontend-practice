@@ -69,12 +69,12 @@ export default function Page() {
   //   router.push(`/${type}/${num}`);
   // };
 
-  // if (loading)
-  //   return (
-  //     <div className={styles.loading}>
-  //       <Loader />
-  //     </div>
-  //   );
+  if (loading)
+    return (
+      <div className={styles.loading}>
+        <Loader />
+      </div>
+    );
 
   return (
     <div>
