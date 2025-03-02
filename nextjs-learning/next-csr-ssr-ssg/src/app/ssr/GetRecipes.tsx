@@ -8,15 +8,10 @@ export async function GetRecipes() {
     const res = await fetch(`${API_URL}/api/recipes`);
 
     if (res.ok) {
-      const data = await res.json();
-      return data;
-    }
-
-    if (!res.ok) {
+      return res.json();
+    } else {
       throw new Error("Failed to fetch data");
     }
-
-    return res.json();
   } catch (error) {
     console.error(error);
     return;
