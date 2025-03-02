@@ -47,7 +47,10 @@ export default function Page() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`${API_URL}/api/recipes`);
+        const res = await fetch(`${API_URL}/api/recipes`, {
+          // cache: "force-cache",
+          next: { revalidate: 10 },
+        });
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -66,12 +69,12 @@ export default function Page() {
   //   router.push(`/${type}/${num}`);
   // };
 
-  if (loading)
-    return (
-      <div className={styles.loading}>
-        <Loader />
-      </div>
-    );
+  // if (loading)
+  //   return (
+  //     <div className={styles.loading}>
+  //       <Loader />
+  //     </div>
+  //   );
 
   return (
     <div>
@@ -80,11 +83,7 @@ export default function Page() {
         {/* <div className={titleStyle}>CSR EMOTION TEST</div> */}
         <div className={styles["grid-container"]}>
           {datas.map((data) => (
-            <div
-              className={styles.section}
-              key={data.recipeId}
-              // onClick={() => buttonOnClick(data.recipeId)}
-            >
+            <div className={styles.section} key={data.recipeId}>
               <div className={styles["img-container"]}>
                 <Image
                   title={data.description}
@@ -96,21 +95,13 @@ export default function Page() {
               </div>
               <div className={styles.btn}>{data.name}</div>
               <div className={styles.description}>{data.description}</div>
-              {/* <div className={styles.detail}>
-                <button onClick={() => buttonOnClick(data.recipeId, "csr")}>
-                  CSR 상세
-                </button>
-                <button onClick={() => buttonOnClick(data.recipeId, "ssr")}>
-                  SSR 상세
-                </button>
-                <button onClick={() => buttonOnClick(data.recipeId, "ssg")}>
-                  SSG 상세
-                </button>
-              </div> */}
             </div>
           ))}
         </div>
-      </div>{" "}
+        <div className={styles.board2}>
+          Copyright ⓒ 2025 kea. All rights reserved.
+        </div>
+      </div>
     </div>
   );
 }

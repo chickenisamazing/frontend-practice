@@ -51,7 +51,7 @@ export default async function Page() {
       : "https://frontend-practice-ebon.vercel.app";
 
   const res = await fetch(`${API_URL}/api/recipes/`, {
-    next: { revalidate: 60 },
+    next: { revalidate: 10 },
   });
 
   if (!res.ok) {
