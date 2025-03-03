@@ -85,6 +85,9 @@ export default async function Page() {
             </div>
           ))}
         </div>
+        <div className={styles.board2}>
+          Copyright ⓒ 2025 kea. All rights reserved.
+        </div>
       </div>
     </div>
   );

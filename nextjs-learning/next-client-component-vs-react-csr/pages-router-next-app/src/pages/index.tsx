@@ -1,7 +1,8 @@
+"use client";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [data, setData] = useState();
+  const [data, setData] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -13,16 +14,18 @@ export default function Home() {
 
   return (
     <div
-      style={{ textAlign: "center", padding: "20px", background: "#e3f2fd" }}
+      style={{ textAlign: "center", padding: "20px", background: "#000000" }}
     >
-      <h1 style={{ margin: "15px", color: "white" }}>React</h1>
+      <h1 style={{ margin: "15px", color: "white" }}>Next.js - Pages Router</h1>
       <h2 style={{ color: "white" }}>Client Side Rendering(CSR)</h2>
+      <br />
+      <p style={{ color: "white" }}>이 텍스트 요소는 언제 나올까?</p>
       <div
         style={{
           width: "200px",
           height: "200px",
           margin: "20px auto",
-          background: data ? "#4caf50" : "#bdbdbd",
+          background: data ? "#E8954C" : "#157A6E",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
