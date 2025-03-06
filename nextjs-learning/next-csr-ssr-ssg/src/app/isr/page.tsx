@@ -3,6 +3,21 @@ import Image from "next/image";
 
 import styles from "./page.module.scss";
 
+// 이모션
+import { css } from "@emotion/css";
+// 스타일드 컴포넌트
+// import styled from "styled-components";
+
+const titleStyle = css`
+  font-size: 32px;
+  color: #0070f3;
+`;
+
+// const Title = styled.div`
+//   font-size: 32px;
+//   color: #0070f3;
+// `;
+
 interface Ingredient {
   id: number;
   name: string;
@@ -68,6 +83,12 @@ export default async function Page() {
     <div>
       <div className={styles.title}>
         <div className={styles.board}>ISR 페이지</div>
+        {/* <Title>STYLED-COMPONENT TEST</Title> */}
+        <div className={titleStyle}>EMOTION TEST in client component</div>
+
+        <div className="text-4xl text-[#0070f3]">
+          TAILWIND in client component
+        </div>
         <div className={styles["grid-container"]}>
           {data.map((recipe: Recipe) => (
             <div className={styles.section} key={recipe.recipeId}>

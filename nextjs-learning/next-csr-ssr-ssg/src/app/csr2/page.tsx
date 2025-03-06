@@ -15,13 +15,13 @@ import styles from "./page.module.scss";
 // import Loader from "@/component/Loader";
 
 const titleStyle = css`
-  font-size: 32px;
-  color: #0070f3;
+  font-size: 50px;
+  color: #f03857;
 `;
 
 const Title = styled.div`
-  font-size: 32px;
-  color: #0070f3;
+  font-size: 50px;
+  color: #f03857;
 `;
 
 interface Ingredient {

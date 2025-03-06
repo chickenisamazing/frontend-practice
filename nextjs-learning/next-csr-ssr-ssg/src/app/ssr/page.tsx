@@ -1,11 +1,20 @@
 import Image from "next/image";
-// import { css } from "@emotion/css";
+
+// 이모션
+import { css } from "@emotion/css";
+// 스타일드 컴포넌트
+import styled from "styled-components";
 
 import styles from "./page.module.scss";
 import { GetRecipes } from "./GetRecipes";
 // import Link from "next/link";
 
-// const titleStyle = css`
+const titleStyle = css`
+  font-size: 50px;
+  color: #f03857;
+`;
+
+// const Title = styled.div`
 //   font-size: 32px;
 //   color: #0070f3;
 // `;
@@ -59,11 +68,21 @@ interface Recipe {
 export default async function Page() {
   const recipesData = await GetRecipes();
 
+  // const Title = styled.div`
+  //   font-size: 32px;
+  //   color: #0070f3;
+  // `;
+
   return (
     <div>
       <div className={styles.title}>
-        <div className={styles.board}>SSR 페이지</div>
-        {/* <div className={titleStyle}>SSR EMOTION TEST</div> */}
+        {/* <div className={styles.board}>SSR 페이지</div> */}
+        <div className={styles.board}>서버 컴포넌트</div>
+        <div className={titleStyle}>EMOTION TEST in server component</div>
+        <div className="text-4xl text-[#0070f3]">
+          TAILWIND in server component
+        </div>
+        {/* <Title>STYLED-COMPONENT TEST</Title> */}
         <div className={styles["grid-container"]}>
           {recipesData.map((recipe: Recipe) => (
             <div className={styles.section} key={recipe.recipeId}>
