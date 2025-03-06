@@ -1,30 +1,23 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
 import { useEffect, useState } from "react";
 
-const DynamicHeader = dynamic(() => import("./Test"), {
-  ssr: false,
-});
+export default function T() {
+  const [data, setData] = useState<string | null>(null);
 
-export default function Home() {
-  // const [data, setData] = useState<string | null>(null);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setData("푸라닭 고추마요 최고");
+    }, 2000);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setData("푸라닭 고추마요 최고");
-  //   }, 2000);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    // <div
-    //   style={{ textAlign: "center", padding: "20px", background: "#000000" }}
-    // >
-    <DynamicHeader />
-    /* <h1 style={{ margin: "15px", color: "white" }}>Next.js - Pages Router</h1>
+    <div
+      style={{ textAlign: "center", padding: "20px", background: "#000000" }}
+    >
+      <h1 style={{ margin: "15px", color: "white" }}>Next.js - Pages Router</h1>
       <h2 style={{ color: "white" }}>Client Side Rendering(CSR)</h2>
       <br />
       <p style={{ color: "white" }}>이 텍스트 요소는 언제 나올까?</p>
@@ -42,7 +35,7 @@ export default function Home() {
         }}
       >
         {data ? "실행 완료!" : "로딩 중..."}
-      </div> */
-    // </div>
+      </div>
+    </div>
   );
 }
