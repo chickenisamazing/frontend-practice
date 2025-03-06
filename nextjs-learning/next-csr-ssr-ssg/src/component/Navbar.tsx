@@ -18,6 +18,14 @@ export default function Navbar() {
       </Link>
       <div className={styles[`navbar-items`]}>
         <Link
+          href="/csr2"
+          className={`${styles[`navbar-item`]} ${
+            pathname === "/csr2" ? styles.active : ""
+          }`}
+        >
+          CSR2
+        </Link>
+        <Link
           href="/csr"
           className={`${styles[`navbar-item`]} ${
             pathname === "/csr" ? styles.active : ""

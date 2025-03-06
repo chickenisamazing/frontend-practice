@@ -1,19 +1,38 @@
-import Image from "next/image";
+// /** @jsxImportSource @emotion/react */
 
-// 이모션
-import { css } from "@emotion/css";
-// 스타일드 컴포넌트
-import styled from "styled-components";
+// import Image from "next/image";
 
-import styles from "./page.module.scss";
-import { GetRecipes } from "./GetRecipes";
+// 이모션 (리액트)
+// import { css } from "@emotion/react";
+
+// 이모션 (리액트)
+// import { css as emotionReact } from "@emotion/react";
+
+// 이모션 (css)
+import { css as emotionCss } from "@emotion/css";
+
+//
+// import styled from "@emotion/styled";
+
+import styles from "./page.module.css";
+// import { GetRecipes } from "./GetRecipes";
 // import Link from "next/link";
 
-const titleStyle = css`
-  font-size: 50px;
-  color: #f03857;
+// const titleStyle = emotionReact`
+//   font-size: 32px;
+//   color: #0070f3;
+// `;
+
+const titleStyle2 = emotionCss`
+  font-size: 32px;
+  color: #0070f3;
 `;
 
+// const myDiv = styled.div({ fontSize: 32 });
+// const myDiv2 = styled.div`
+//   fontsize: 32;
+// `;
+// const myDiv3 = styled("div")({ fontSize: 32 });
 // const Title = styled.div`
 //   font-size: 32px;
 //   color: #0070f3;
@@ -66,7 +85,7 @@ interface Recipe {
 // }
 
 export default async function Page() {
-  const recipesData = await GetRecipes();
+  // const recipesData = await GetRecipes();
 
   // const Title = styled.div`
   //   font-size: 32px;
@@ -78,12 +97,20 @@ export default async function Page() {
       <div className={styles.title}>
         {/* <div className={styles.board}>SSR 페이지</div> */}
         <div className={styles.board}>서버 컴포넌트</div>
-        <div className={titleStyle}>EMOTION TEST in server component</div>
-        <div className="text-4xl text-[#0070f3]">
+        <div className={styles.title}>하하핳</div>
+        <div className="global">globals.css</div>
+        {/* @emotion/react - 리액트 전용 - fouc 발생 안함 굿 */}
+        {/* <div css={titleStyle}>EMOTION client component</div> */}
+
+        {/* @emotion/css - 프레임 워크 구애 x - fouc 발생 */}
+        <div className={titleStyle2}>EMOTION client component</div>
+
+        {/* <myDiv3>안녕</myDiv3> */}
+        {/* <div className="text-4xl text-[#0070f3]">
           TAILWIND in server component
-        </div>
+        </div> */}
         {/* <Title>STYLED-COMPONENT TEST</Title> */}
-        <div className={styles["grid-container"]}>
+        {/* <div className={styles["grid-container"]}>
           {recipesData.map((recipe: Recipe) => (
             <div className={styles.section} key={recipe.recipeId}>
               <div className={styles["img-container"]}>
@@ -100,7 +127,7 @@ export default async function Page() {
               <div className={styles.description}>{recipe.description}</div>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className={styles.board2}>
           Copyright ⓒ 2025 kea. All rights reserved.
         </div>

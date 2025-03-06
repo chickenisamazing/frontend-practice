@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -6,23 +7,32 @@ import Link from "next/link";
 import Image from "next/image";
 // import { css } from "@emotion/css";
 
-// 이모션
-import { css } from "@emotion/css";
-// 스타일드 컴포넌트
-import styled from "styled-components";
+// 이모션 (리액트)
+import { css as emotionReact } from "@emotion/react";
 
-import styles from "./page.module.scss";
+// 이모션 (css)
+import { css as emotionCss } from "@emotion/css";
+
+// 스타일드 컴포넌트
+// import styled from "styled-components";
+
+import styles from "./page.module.css";
 // import Loader from "@/component/Loader";
 
-const titleStyle = css`
+const titleStyle = emotionReact`
   font-size: 32px;
   color: #0070f3;
 `;
 
-const Title = styled.div`
+const titleStyle2 = emotionCss`
   font-size: 32px;
   color: #0070f3;
 `;
+
+// const Title = styled.div`
+//   font-size: 32px;
+//   color: #0070f3;
+// `;
 
 interface Ingredient {
   id: number;
@@ -62,31 +72,31 @@ export default function Page() {
     alert("리프레시되냐고");
   };
 
-  const API_URL =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://frontend-practice-ebon.vercel.app";
+  // const API_URL =
+  //   process.env.NODE_ENV === "development"
+  //     ? "http://localhost:3000"
+  //     : "https://frontend-practice-ebon.vercel.app";
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(`${API_URL}/api/recipes`, {
-          // cache: "force-cache",
-          next: { revalidate: 10 },
-        });
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await res.json();
-        setDatas(data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        // setLoading(false);
-      }
-    }
-    fetchData();
-  }, [API_URL]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const res = await fetch(`${API_URL}/api/recipes`, {
+  //         // cache: "force-cache",
+  //         next: { revalidate: 10 },
+  //       });
+  //       if (!res.ok) {
+  //         throw new Error("Failed to fetch data");
+  //       }
+  //       const data = await res.json();
+  //       setDatas(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     } finally {
+  //       // setLoading(false);
+  //     }
+  //   }
+  //   fetchData();
+  // }, [API_URL]);
 
   // const buttonOnClick = (num: number, type: string) => {
   //   router.push(`/${type}/${num}`);
@@ -101,11 +111,21 @@ export default function Page() {
 
   return (
     <div>
-      <div className={styles.title}>
-        {/* <div className={styles.board}>CSR 페이지</div> */}
-        <div className={styles.board}>클라이언트 컴포넌트</div>
-        {/* <div className={titleStyle}>EMOTION TEST in client component</div> */}
-        <button onClick={() => router.push("/ssr")}>
+      <div className={styles.title}>하하</div>
+
+      <div className="conflict">충돌?</div>
+      {/* <div className={styles.title}> */}
+      {/* <div className={styles.board}>CSR 페이지</div> */}
+      {/* <div className={styles.board}>클라이언트 컴포넌트</div>
+        <div className={styles.test}>module.scss</div>
+        <div className="global">globals.css</div> */}
+
+      {/* @emotion/react - 리액트 전용 - fouc 발생 안함 굿 */}
+      {/* <div css={titleStyle}>EMOTION client component</div> */}
+
+      {/* @emotion/css - 프레임 워크 구애 x - fouc 발생 */}
+      {/* <div className={titleStyle2}>EMOTION client component</div> */}
+      {/* <button onClick={() => router.push("/ssr")}>
           서버 컴포넌트로 푸쉬
         </button>
 
@@ -120,15 +140,14 @@ export default function Page() {
         <Link href="/ssr">
           {" "}
           {/* Link 컴포넌트 사용 */}
-          서버 컴포넌트로 링크
-        </Link>
-        <Title>STYLED-COMPONENT TEST</Title>
-        <div className={titleStyle}>EMOTION TEST in client component</div>
-
-        <div className="text-4xl text-[#0070f3]">
+      {/* 서버 컴포넌트로 링크 */}
+      {/* </Link{"}"} */}
+      {/* <Title>STYLED-COMPONENT TEST</Title>
+        <div className={titleStyle}>EMOTION TEST in client component</div> */}
+      {/* <div className="text-4xl text-[#0070f3]">
           TAILWIND in client component
-        </div>
-        <div className={styles["grid-container"]}>
+        </div> */}
+      {/* <div className={styles["grid-container"]}>
           {datas.map((data) => (
             <div className={styles.section} key={data.recipeId}>
               <div className={styles["img-container"]}>
@@ -144,11 +163,11 @@ export default function Page() {
               <div className={styles.description}>{data.description}</div>
             </div>
           ))}
-        </div>
-        <div className={styles.board2}>
+        </div> */}
+      {/* <div className={styles.board2}>
           Copyright ⓒ 2025 kea. All rights reserved.
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
