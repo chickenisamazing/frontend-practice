@@ -94,7 +94,7 @@ export default async function Page() {
       <div className={styles.board}>서버 컴포넌트</div>
       {/* <div className={styles.title}>하하핳</div> */}
       <div className={styles.test}>CSS Moudles</div>
-      <div className="global-test">globals.css</div>
+      <div className="global-test">Global CSS</div>
       <div className="text-[32px] text-[#00BCFF]">Tailwind CSS</div>
       {/* @emotion/react - 리액트 전용 - fouc 발생 안함 굿 */}
       {/* <div css={titleStyle}>EMOTION client component</div> */}
