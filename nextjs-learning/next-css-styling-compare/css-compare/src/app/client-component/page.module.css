@@ -8,6 +8,7 @@
 }
 
 .board {
+  margin-bottom: 20px;
   font-size: 30px;
   color: rgb(118, 117, 117);
 }
@@ -99,5 +100,12 @@
 
 .test {
   font-size: 32px;
-  color: #0070f3;
+  color: #6d98ba;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
 }
