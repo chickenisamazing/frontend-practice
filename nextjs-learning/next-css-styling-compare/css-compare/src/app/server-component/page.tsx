@@ -11,31 +11,26 @@
 // 이모션 (css)
 import { css as emotionCss } from "@emotion/css";
 
-//
-// import styled from "@emotion/styled";
+// styled-components
+import styled from "styled-components";
 
 import styles from "./page.module.css";
 // import { GetRecipes } from "./GetRecipes";
 // import Link from "next/link";
 
-// const titleStyle = emotionReact`
+// const emotionReactStyle = emotionReact`
 //   font-size: 32px;
-//   color: #0070f3;
+//   color: #CC67BC;
 // `;
 
-const titleStyle2 = emotionCss`
+const emotionCssStyle = emotionCss`
   font-size: 32px;
-  color: #0070f3;
+  color: #CC67BC
 `;
 
-// const myDiv = styled.div({ fontSize: 32 });
-// const myDiv2 = styled.div`
-//   fontsize: 32;
-// `;
-// const myDiv3 = styled("div")({ fontSize: 32 });
-// const Title = styled.div`
+// const StyledComponentStyle = styled.div`
 //   font-size: 32px;
-//   color: #0070f3;
+//   color: #e4976f;
 // `;
 
 interface Ingredient {
@@ -93,24 +88,27 @@ export default async function Page() {
   // `;
 
   return (
-    <div>
-      <div className={styles.title}>
-        {/* <div className={styles.board}>SSR 페이지</div> */}
-        <div className={styles.board}>서버 컴포넌트</div>
-        <div className={styles.title}>하하핳</div>
-        <div className="global">globals.css</div>
-        {/* @emotion/react - 리액트 전용 - fouc 발생 안함 굿 */}
-        {/* <div css={titleStyle}>EMOTION client component</div> */}
+    <div className={styles.container}>
+      {/* <div className={styles.title}> */}
+      {/* <div className={styles.board}>SSR 페이지</div> */}
+      <div className={styles.board}>서버 컴포넌트</div>
+      {/* <div className={styles.title}>하하핳</div> */}
+      <div className={styles.test}>CSS Moudles</div>
+      <div className="global-test">globals.css</div>
+      <div className="text-[32px] text-[#00BCFF]">Tailwind CSS</div>
+      {/* @emotion/react - 리액트 전용 - fouc 발생 안함 굿 */}
+      {/* <div css={titleStyle}>EMOTION client component</div> */}
 
-        {/* @emotion/css - 프레임 워크 구애 x - fouc 발생 */}
-        <div className={titleStyle2}>EMOTION client component</div>
+      {/* @emotion/css - 프레임 워크 구애 x - fouc 발생 */}
 
-        {/* <myDiv3>안녕</myDiv3> */}
-        {/* <div className="text-4xl text-[#0070f3]">
+      <div className={emotionCssStyle}>@emotion/css</div>
+      {/* <StyledComponentStyle>styled-components</StyledComponentStyle> */}
+      {/* <myDiv3>안녕</myDiv3> */}
+      {/* <div className="text-4xl text-[#0070f3]">
           TAILWIND in server component
         </div> */}
-        {/* <Title>STYLED-COMPONENT TEST</Title> */}
-        {/* <div className={styles["grid-container"]}>
+
+      {/* <div className={styles["grid-container"]}>
           {recipesData.map((recipe: Recipe) => (
             <div className={styles.section} key={recipe.recipeId}>
               <div className={styles["img-container"]}>
@@ -128,10 +126,10 @@ export default async function Page() {
             </div>
           ))}
         </div> */}
-        <div className={styles.board2}>
-          Copyright ⓒ 2025 kea. All rights reserved.
-        </div>
+      <div className={styles.board2}>
+        Copyright ⓒ 2025 kea. All rights reserved.
       </div>
+      {/* </div> */}
     </div>
   );
 }
