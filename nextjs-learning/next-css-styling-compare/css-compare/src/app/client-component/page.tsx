@@ -5,34 +5,33 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-// import { css } from "@emotion/css";
 
-// 이모션 (리액트)
+// @emotion/react
 import { css as emotionReact } from "@emotion/react";
 
-// 이모션 (css)
+// @emotion/css
 import { css as emotionCss } from "@emotion/css";
 
-// 스타일드 컴포넌트
-// import styled from "styled-components";
+// styled-components
+import styled from "styled-components";
 
+// CSS Modules
 import styles from "./page.module.css";
-// import Loader from "@/component/Loader";
 
-const titleStyle = emotionReact`
+const emotionReactStyle = emotionReact`
   font-size: 32px;
-  color: #0070f3;
+  color: #CC67BC;
 `;
 
-const titleStyle2 = emotionCss`
+const emotionCssStyle = emotionCss`
   font-size: 32px;
-  color: #0070f3;
+  color: #CC67BC
 `;
 
-// const Title = styled.div`
-//   font-size: 32px;
-//   color: #0070f3;
-// `;
+const StyledComponentStyle = styled.div`
+  font-size: 32px;
+  color: #e4976f;
+`;
 
 interface Ingredient {
   id: number;
@@ -110,21 +109,17 @@ export default function Page() {
   //   );
 
   return (
-    <div>
-      <div className={styles.title}>하하</div>
-
-      <div className="conflict">충돌?</div>
-      {/* <div className={styles.title}> */}
-      {/* <div className={styles.board}>CSR 페이지</div> */}
-      {/* <div className={styles.board}>클라이언트 컴포넌트</div>
-        <div className={styles.test}>module.scss</div>
-        <div className="global">globals.css</div> */}
-
+    <div className={styles.container}>
+      <div className={styles.board}>클라이언트 컴포넌트</div>
+      <div className={styles.test}>CSS Moudles</div>
+      <div className="global-test">Global CSS</div>
+      <div className="text-[32px] text-[#00BCFF]">Tailwind CSS</div>
       {/* @emotion/react - 리액트 전용 - fouc 발생 안함 굿 */}
-      {/* <div css={titleStyle}>EMOTION client component</div> */}
+      <div css={emotionReactStyle}>@emotion/react</div>
+      {/* <div className={titleStyle}>EMOTION TEST in client component</div> */}
 
       {/* @emotion/css - 프레임 워크 구애 x - fouc 발생 */}
-      {/* <div className={titleStyle2}>EMOTION client component</div> */}
+      <div className={emotionCssStyle}>@emotion/css</div>
       {/* <button onClick={() => router.push("/ssr")}>
           서버 컴포넌트로 푸쉬
         </button>
@@ -139,14 +134,12 @@ export default function Page() {
         </button>
         <Link href="/ssr">
           {" "}
-          {/* Link 컴포넌트 사용 */}
+          {/* Link 컴포넌트 사용
       {/* 서버 컴포넌트로 링크 */}
       {/* </Link{"}"} */}
-      {/* <Title>STYLED-COMPONENT TEST</Title>
-        <div className={titleStyle}>EMOTION TEST in client component</div> */}
-      {/* <div className="text-4xl text-[#0070f3]">
-          TAILWIND in client component
-        </div> */}
+      <StyledComponentStyle>styled-components</StyledComponentStyle>
+      {/* <div className={titleStyle}>EMOTION TEST in client component</div> */}
+
       {/* <div className={styles["grid-container"]}>
           {datas.map((data) => (
             <div className={styles.section} key={data.recipeId}>
