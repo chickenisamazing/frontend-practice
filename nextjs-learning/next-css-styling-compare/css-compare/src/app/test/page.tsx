@@ -1,7 +1,19 @@
-// import { renderToString } from "react-dom/server";
+// @emotion/react
+/** @jsxImportSource @emotion/react */
 
-import ServerComponent from ".././server-component/page";
+"use client";
+
+import { css as emotionReact } from "@emotion/react";
+
+const emotionReactStyle = emotionReact`
+  font-size: 32px;
+  color: #CC67BC;
+`;
 
 export default function Page() {
-  //   return renderToString(<ServerComponent />);
+  return (
+    <div>
+      <div css={emotionReactStyle}>@emotion/react</div>
+    </div>
+  );
 }

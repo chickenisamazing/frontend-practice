@@ -11,11 +11,11 @@ export default function Navbar() {
 
   return (
     <div className={styles.navbar}>
-      <Link href="/" className={styles[`navbar-title`]}>
-        {/* <Image src="/kea-olive.png" alt="File icon" width={56} height={56} /> */}
+      {/* <Link href="/" className={styles[`navbar-title`]}>
+
         RENDERING TEST
-        {/* <Image src="/kea-olive.png" alt="File icon" width={56} height={56} /> */}
-      </Link>
+  
+      </Link> */}
       <div className={styles[`navbar-items`]}>
         <Link
           href="/client-component"
@@ -34,9 +34,9 @@ export default function Navbar() {
           SERVER COMPONENT
         </Link>
       </div>
-      <Link href="/admin" className={styles[`navbar-admin`]}>
+      {/* <Link href="/admin" className={styles[`navbar-admin`]}>
         admin
-      </Link>
+      </Link> */}
     </div>
   );
 }
