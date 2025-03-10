@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+// /** @jsxImportSource @emotion/react */
 
 "use client";
 
@@ -56,11 +56,20 @@ export default function Page() {
   return (
     <div className={styles.container}>
       <div className={styles.board}>클라이언트 컴포넌트</div>
-      <div className={styles.test}>CSS Modules</div>
-      <div className="global-test">Global CSS</div>
+
+      {/* CSS Modules */}
+      <div className={styles["css-modules-style"]}>CSS Modules</div>
+
+      {/* Global CSS */}
+      <div className="global-css-style">Global CSS</div>
+
+      {/* Tailwind CSS */}
       <div className="text-[32px] text-[#00BCFF]">Tailwind CSS</div>
+
+      {/* @emotion/css */}
       <div className={emotionCssStyle}>@emotion/css</div>
-      <div css={emotionReactStyle}>@emotion/react</div>
+
+      {/* styled-components */}
       <StyledComponentStyle>styled-components</StyledComponentStyle>
 
       {/* <button onClick={() => router.push("/server-component")}>
@@ -71,11 +80,13 @@ export default function Page() {
         서버 컴포넌트로 리플레이스
       </button> */}
 
-      <a href="/server-component">서버 컴포넌트로 에이흐레프</a>
+      {/* <a href="/server-component">서버 컴포넌트로 에이흐레프</a> */}
       {/* <button type="button" onClick={refreshPage}>
         리프레시만 하자
       </button> */}
-      <Link href="/server-component">Link 컴포넌트 사용</Link>
+      {/* <Link href="/server-component">Link 컴포넌트 사용</Link> */}
+
+      {/* <div css={emotionReactStyle}>@emotion/react</div> */}
     </div>
   );
 }
