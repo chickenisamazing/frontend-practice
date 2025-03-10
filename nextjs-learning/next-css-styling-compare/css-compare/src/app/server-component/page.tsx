@@ -87,10 +87,10 @@ export default async function Page() {
       <div className={styles.board}>서버 컴포넌트</div>
 
       {/* CSS Modules */}
-      <div className={styles.test}>CSS Modules</div>
+      <div className={styles["css-modules-style"]}>CSS Modules</div>
 
       {/* Global CSS */}
-      <div className="global-test">Global CSS</div>
+      <div className="global-css-style">Global CSS</div>
 
       {/* Tailwind CSS */}
       <div className="text-[32px] text-[#00BCFF]">Tailwind CSS</div>
